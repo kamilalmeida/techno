@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Techno</title>
+</head>
+
+<body>
+  <div id="app">
+    <section class="modal" v-if="product">
+      <div class="modal_container">
+        <div class="modal_img">
+          <img :src="product.img" :alt="product.name">
+        </div>
+        <div class="modal_data">
+          <span class="modal_price">{{product.price}}</span>
+          <h2 class="modal_title">{{product.name}}</h2>
+          <p>{{product.description}}</p>
+          <button class="modal_btn">Adicionar Item</button>
+        </div>
+        <div class="ratings">
+          <h2 class="subtitle_rating">Avaliações</h2>
+          <ul>
+            <li v-for="rating in product.rating" class="rating">
+              <p class="rating_description">{{rating.description}}</p>
+              <p class="rating_user">{{rating.name}} | {{rating.stars}} estrelas</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="products">
+      <div class="product" v-for="product in products" @click="fetchProduct(product.id)" :key="product.id">
+        <img :src="product.img" alt="product.name" class="product_img" />
+        <div class="product_info">
+          <span class="product_price">{{product.price | numberPrice}}</span>
+          <h2 class="product_title">{{product.name}}</h2>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
