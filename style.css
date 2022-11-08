@@ -66,8 +66,30 @@ body {
   align-items: end;
   grid-gap: 50px;
   padding: 0 50px 50px 0;
+  animation: fadeIn 0.3s forwards;
 }
-
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3D(50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3D(0px, 0, 0);
+  }
+}
+.modal_close {
+  border-radius: 50%;
+  border: 2px solid #000;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1rem;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 .modal_img {
   margin-top: 50px;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -97,26 +119,26 @@ body {
   font-family: "Noto Serif";
 }
 
-.modal_btn:active{
+.modal_btn:active {
   background: #808080;
 }
 .ratings {
   grid-column: 2;
 }
 
-.rating{
+.rating {
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.subtitle_rating{
+.subtitle_rating {
   font-size: 1.75rem;
 }
-.rating_description{
+.rating_description {
   color: rgba(0, 0, 0, 0.7);
   margin: 20px 0 5px 0;
 }
 
-.rating_user{
+.rating_user {
   font-weight: bold;
 }
