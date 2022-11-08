@@ -3,6 +3,7 @@ new Vue({
   data: {
     products: [],
     product: false,
+    fullCart: 0,
   },
   filters: {
     numberPrice(value) {
