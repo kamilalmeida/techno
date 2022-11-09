@@ -32,12 +32,10 @@ new Vue({
       fetch("./api/products.json")
         .then((response) => response.json())
         .then((response) => {
-          console.log(response);
           this.products = response;
         });
     },
     fetchProduct(id) {
-      console.log(id);
       fetch(`./api/products/${id}/data.json`)
         .then((response) => response.json())
         .then((response) => {

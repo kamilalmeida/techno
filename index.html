@@ -43,7 +43,6 @@
           <span class="modal_price">{{product.price | numberPrice}}</span>
           <h2 class="modal_title">{{product.name}}</h2>
           <p>{{product.description}}</p>
-          <p>{{product.stock}}</p>
           <button class="modal_btn" v-if="product.stock > 0" @click="addItem">Adicionar Item</button>
           <button class="modal_btn sold_out" v-else disabled>Produto esgotado</button>
 
@@ -59,7 +58,7 @@
         </div>
       </div>
     </section>
-    
+
     <section class="cart_modal" :class="{active: activeCart}" @click="clickOutCart">
       <div class="cart_container">
         <button class="closeCart" @click="activeCart = false">X</button>
