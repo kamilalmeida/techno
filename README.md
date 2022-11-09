@@ -7,6 +7,7 @@ Desenvolvi esse projeto para praticar o que aprendi no curso de Vue 2 da origami
 
 - Consome uma API
 - Adiciona e remove itens do carrinho
+- Controle de estoque
 - Dados salvos no LocalStorage
 - Responsividade
 
